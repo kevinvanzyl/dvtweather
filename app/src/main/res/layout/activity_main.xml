@@ -8,21 +8,47 @@
     android:orientation="vertical"
     tools:context="codes.kevinvanzyl.dvtweather.MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_weight="1"
         android:layout_height="0dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:id="@+id/panel_today">
 
         <ImageView
             android:id="@+id/image_today"
             android:scaleType="fitXY"
-            android:src="@drawable/forest_sunny"
+            android:src="@drawable/forest_rainy"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:paddingBottom="28dp"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_current_temp"
+                android:text="25º"
+                android:textColor="@color/white"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/text_current_sky"
+                android:text="RAINY"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -30,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/forest_sunny_green">
+        android:background="@color/forest_rainy_gray">
 
     </LinearLayout>
 

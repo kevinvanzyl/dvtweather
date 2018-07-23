@@ -21,5 +21,6 @@
     <color name="sea_sunny_status_yellow">#f0b90e</color>
     <color name="sea_cloudy_status_blue">#5f8498</color>
     <color name="sea_rainy_status_grey">#757575</color>
+    <color name="white">#FFFFFF</color>
 
 </resources>
