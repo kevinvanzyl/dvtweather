@@ -25,6 +25,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     int currentTheme;
     int currentSky;
 
-    private ImageView imgToday;
+    private RelativeLayout panelToday;
     private LinearLayout panelForecast;
     private TextView txtCurrentTemp;
     private TextView txtCurrentSky;
@@ -121,11 +122,11 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        currentTheme = preferences.getInt(THEME, THEME_FOREST);
+        currentTheme = preferences.getInt(THEME, THEME_SEA);
 
         setContentView(R.layout.activity_main);
 
-        imgToday = (ImageView) findViewById(R.id.image_today);
+        panelToday = (RelativeLayout) findViewById(R.id.panel_today);
         panelForecast = (LinearLayout) findViewById(R.id.panel_forecast);
         txtCurrentTemp = (TextView) findViewById(R.id.text_current_temp);
         txtCurrentSky = (TextView) findViewById(R.id.text_current_sky);
@@ -167,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         Criteria criteria = new Criteria();
         provider = locationManager.getBestProvider(criteria, false);
 
-        locationManager.requestLocationUpdates(provider, 400, 1, this);
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60000, 200, this);
 
         Location location = locationManager.getLastKnownLocation(provider);
 
@@ -347,7 +348,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
                 }
         }
 
-        imgToday.setImageResource(backgroundDrawable);
+        panelToday.setBackground(ContextCompat.getDrawable(this, backgroundDrawable));
         panelForecast.setBackgroundColor(ContextCompat.getColor(this, forecastBackgroundColor));
         getWindow().setStatusBarColor(ContextCompat.getColor(this, statusColor));
     }

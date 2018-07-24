@@ -9,17 +9,10 @@
     tools:context="codes.kevinvanzyl.dvtweather.MainActivity">
 
     <RelativeLayout
-        android:layout_weight="1"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/forest_rainy"
         android:layout_width="match_parent"
         android:id="@+id/panel_today">
-
-        <ImageView
-            android:id="@+id/image_today"
-            android:scaleType="fitXY"
-            android:src="@drawable/forest_rainy"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
 
         <LinearLayout
             android:layout_centerInParent="true"
@@ -33,7 +26,7 @@
                 android:id="@+id/text_current_temp"
                 android:text="25º"
                 android:textColor="@color/white"
-                android:textSize="48sp"
+                android:textSize="@dimen/text_huge"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -42,7 +35,7 @@
                 android:id="@+id/text_current_sky"
                 android:text="RAINY"
                 android:textColor="@color/white"
-                android:textSize="26sp"
+                android:textSize="@dimen/text_big"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -51,12 +44,170 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:id="@+id/panel_forecast"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/forest_rainy_gray">
+
+        <RelativeLayout
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_today_min_temp"
+                    android:text="16º"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_normal"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="min"
+                    android:textSize="@dimen/text_normal"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_centerHorizontal="true"
+                android:gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_today_current_temp"
+                    android:text="18º"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_normal"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="Current"
+                    android:textSize="@dimen/text_normal"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_today_max_temp"
+                    android:text="23º"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_normal"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:text="max"
+                    android:textSize="@dimen/text_normal"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Tuesday"
+                    android:textSize="@dimen/text_normal"
+                    android:textColor="@color/white"
+                    android:id="@+id/text_forecast_day_1_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+
 
     </LinearLayout>
 
